@@ -1,0 +1,16 @@
+infrastructureDefinition:
+  name: minikube
+  identifier: minikube
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: eksbhoopesh
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: minikube
+    namespace: litmus
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+    provisioner: <+input>
+  allowSimultaneousDeployments: true
+  scopedServices:
+    - pythondep
